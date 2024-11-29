@@ -1,0 +1,128 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<BaseLayout title="About | Arlan KOWO " description="About Arlan KOWO">
+  <div class="stack gap-20">
+    <main class="wrapper about">
+      <Hero title="About me" tagline="Read below to learn more about myself.">
+        <img
+          width="1553"
+          height="873"
+          src="/assets/About.png"
+          alt="Arlan KOWO at work "
+        />
+      </Hero>
+
+      <section>
+        <h2 class="section-title">WHO I AM ?</h2>
+        <div class="content">
+          <p>
+            Dynamic, Detail-Oriented and Curious, these are the three words or
+            expressions that come to my mind when someone asks me to describe
+            myself. Deeply convinced that information systems are at the core of
+            an organization’s success, I am particularly drawn to the challenges
+            and opportunities they present. Currently in my final year of an
+            engineering program specializing in computer science, I am seeking a
+            six (6)-month internship starting in February 2025 to apply my
+            skills and actively contribute to innovative projects. If you know
+            someone who knows someone seeking a devoted intern, or
+            if you are looking yourself for a motivated intern, feel free to reach out to me.
+          </p>
+
+		  <br>
+
+          <p>
+            I would be glad to discuss with you about upcomming projects
+          </p>
+
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title"> Education </h2>
+        <div class="content">
+          <p>
+            <b> CESI GRADUATE SCHOOL OF ENGINEER </b>
+          </p>
+          <p> <i> Master's Degree in Computer Science </i> </p>
+		  </br>
+          <p> <b> INSTITUT UNIVERSITAIRE DE LA CÔTE  </b> </p>
+          <p> <i> Preparatory classe Y3 (2021-2022)</i> </p>
+		  </br>
+          <p> <b> POLYTECH NANCY  </b> </p>
+          <p> <i> Preparatory classes PEIP A (2019-2021) </i> </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title"> Skills </h2>
+        <div class="content">
+          <p> Want to know about my skills? Just hire me !! </p>
+          
+        </div>
+      </section>
+    </main>
+
+    <ContactCTA />
+  </div>
+</BaseLayout>
+
+<style>
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  img {
+    margin-top: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--gray-200);
+  }
+
+  .section-title {
+    grid-column-start: 1;
+    font-size: var(--text-xl);
+    color: var(--gray-0);
+  }
+
+  .content {
+    grid-column: 2 / 4;
+  }
+
+  .content :global(a) {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+  }
+
+  .content :global(a:hover),
+  .content :global(a:focus) {
+    text-decoration-color: currentColor;
+  }
+
+  @media (min-width: 50em) {
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 60% 1fr;
+    }
+
+    .about > :global(:first-child) {
+      grid-column-start: 2;
+    }
+
+    section {
+      display: contents;
+      font-size: var(--text-lg);
+    }
+  }
+</style>
